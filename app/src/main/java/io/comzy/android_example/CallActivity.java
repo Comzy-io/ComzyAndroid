@@ -1,0 +1,37 @@
+package io.comzy.android_example;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.FrameLayout;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import io.comzy.comzylib.Comzy;
+
+public class CallActivity extends AppCompatActivity {
+    private String API_KEY = "YOUR_API_KEY";
+    FrameLayout localview,remoteview;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_call);
+
+        String userId = getIntent().getStringExtra("USER_ID");
+        String remoteId = getIntent().getStringExtra("REMOTE_ID");
+
+        localview = findViewById(R.id.localVideoView);
+        remoteview = findViewById(R.id.remoteVideoView);
+
+        Comzy videoCore = Comzy.getInstance(this);
+        Comzy.start(CallActivity.this,CallActivity.this,API_KEY,userId,remoteId);
+
+        localview.addView(videoCore.getLocalVideoView(getApplicationContext()));
+        remoteview.addView(videoCore.getRemoteVideoView());
+    }
+}
