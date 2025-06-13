@@ -12,7 +12,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import io.comzy.comzylib.Comzy;
 
 public class MainActivity extends AppCompatActivity {
     EditText editTextUserId,editTextRemoteId;

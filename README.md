@@ -40,7 +40,7 @@ Include the library in your **`build.gradle.kts`** (app module):
 
 ```kotlin
 dependencies {
-    implementation("io.comzy:ComzyLib:1.1.0")
+    implementation("io.comzy:ComzyLib:1.2.0")
 }
 ```
 

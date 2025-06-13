@@ -41,6 +41,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("io.comzy:ComzyLib:1.1.0")
+    implementation("io.comzy:ComzyLib:1.2.0")
+    implementation ("live.videosdk:rtc-android-sdk:0.1.17")
+
 
 }

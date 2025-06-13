@@ -10,10 +10,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import io.comzy.comzylib.Comzy;
+import io.comzy.videocore.Comzy;
+
 
 public class CallActivity extends AppCompatActivity {
-    private String API_KEY = "YOUR_API_KEY";
+    private String API_KEY = "key_52abac8e6db09f157337cc795fa065a46eb7084af0b59scae902cadd90f0c699";
     FrameLayout localview,remoteview;
 
     @Override
@@ -29,9 +30,9 @@ public class CallActivity extends AppCompatActivity {
         remoteview = findViewById(R.id.remoteVideoView);
 
         Comzy videoCore = Comzy.getInstance(this);
-        Comzy.start(CallActivity.this,CallActivity.this,API_KEY,userId,remoteId);
+        Comzy.start(CallActivity.this,API_KEY,userId,remoteId);
 
-        localview.addView(videoCore.getLocalVideoView(getApplicationContext()));
+        localview.addView(videoCore.getLocalVideoView());
         remoteview.addView(videoCore.getRemoteVideoView());
     }
 }
