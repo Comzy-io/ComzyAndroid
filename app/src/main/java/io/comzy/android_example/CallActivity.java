@@ -17,7 +17,7 @@ import io.comzy.videocore.Comzy;
 
 
 public class CallActivity extends AppCompatActivity {
-    private String API_KEY = "key_52abac8e6db09f157337cc795fa065a46eb7084af0b59scae902cadd90f0c699"; // this key is not working please use your own api key
+    private String API_KEY = "YOUR_API_KEY"; // this key is not working please use your own api key
     FrameLayout localview,remoteview;
     TextView remoteUserName;
     ImageButton muteBtn,endCall,btnCam;
