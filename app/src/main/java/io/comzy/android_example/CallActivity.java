@@ -3,6 +3,7 @@ package io.comzy.android_example;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +15,9 @@ import io.comzy.videocore.Comzy;
 
 
 public class CallActivity extends AppCompatActivity {
-    private String API_KEY = "key_52abac8e6db09f157337cc795fa065a46eb7084af0b59scae902cadd90f0c699";
+    private String API_KEY = "key_52abac8e6db09f157337cc795fa065a46eb7084af0b59scae902cadd90f0c699"; // this key is not working please use your own api key
     FrameLayout localview,remoteview;
+    TextView remoteUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class CallActivity extends AppCompatActivity {
 
         localview = findViewById(R.id.localVideoView);
         remoteview = findViewById(R.id.remoteVideoView);
+        remoteUserName = findViewById(R.id.tvUserName);
+        remoteUserName.setText(remoteId);
 
         Comzy videoCore = Comzy.getInstance(this);
         Comzy.start(CallActivity.this,API_KEY,userId,remoteId);
