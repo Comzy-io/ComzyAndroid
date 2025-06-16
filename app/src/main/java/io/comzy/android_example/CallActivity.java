@@ -2,7 +2,9 @@ package io.comzy.android_example;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +20,7 @@ public class CallActivity extends AppCompatActivity {
     private String API_KEY = "key_52abac8e6db09f157337cc795fa065a46eb7084af0b59scae902cadd90f0c699"; // this key is not working please use your own api key
     FrameLayout localview,remoteview;
     TextView remoteUserName;
+    ImageButton muteBtn,endCall,btnCam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +33,41 @@ public class CallActivity extends AppCompatActivity {
 
         localview = findViewById(R.id.localVideoView);
         remoteview = findViewById(R.id.remoteVideoView);
+
         remoteUserName = findViewById(R.id.tvUserName);
+
+        muteBtn = findViewById(R.id.btnMute);
+        endCall = findViewById(R.id.btnEndCall);
+        btnCam = findViewById(R.id.btnCam);
+
+
         remoteUserName.setText(remoteId);
 
-        Comzy videoCore = Comzy.getInstance(this);
+        Comzy comzy = Comzy.getInstance(this);
         Comzy.start(CallActivity.this,API_KEY,userId,remoteId);
 
-        localview.addView(videoCore.getLocalVideoView());
-        remoteview.addView(videoCore.getRemoteVideoView());
+        localview.addView(comzy.getLocalVideoView());
+        remoteview.addView(comzy.getRemoteVideoView());
+
+        muteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                comzy.toggleMute();
+            }
+        });
+
+        btnCam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                comzy.toggleCamera();
+            }
+        });
+
+        endCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                comzy.endCall();
+            }
+        });
     }
 }

@@ -110,46 +110,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Secondary Controls -->
-        <LinearLayout
-            android:id="@+id/secondaryControls"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="16dp"
-            android:background="@drawable/secondary_controls_background">
 
-            <ImageButton
-                android:id="@+id/btnToggleVideo"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/secondary_button_background"
-                android:src="@drawable/ic_videocam"
-                android:elevation="4dp"
-                app:tint="#FFFFFF" />
-
-            <ImageButton
-                android:id="@+id/btnSpeaker"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/secondary_button_background"
-                android:src="@drawable/ic_volume_up"
-                app:tint="#FFFFFF"
-                android:elevation="4dp" />
-
-            <ImageButton
-                android:id="@+id/btnFlipCamera"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/secondary_button_background"
-                android:src="@drawable/ic_flip_camera"
-                app:tint="#FFFFFF"
-                android:elevation="4dp" />
-
-        </LinearLayout>
 
         <!-- Primary Controls -->
         <LinearLayout
@@ -205,11 +166,11 @@
                 app:cardBackgroundColor="#2196F3">
 
                 <ImageButton
-                    android:id="@+id/btnMore"
+                    android:id="@+id/btnCam"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_more_vert"
+                    android:src="@drawable/ic_flip_camera"
                     app:tint="#FFFFFF" />
 
             </androidx.cardview.widget.CardView>
